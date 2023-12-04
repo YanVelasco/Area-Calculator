@@ -27,9 +27,9 @@ public class Circle extends Shape {
 
     @Override
     public void area() {
-    Double circleArea = pi * Math.pow(radius, 2);
-    DecimalFormat decimalFormat = new DecimalFormat("#.##");
-    System.out.println("Circle area is: " + decimalFormat.format(circleArea));
-}
+        Double circleArea = pi * Math.pow(radius, 2);
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        System.out.println("Circle area is: " + decimalFormat.format(circleArea));
+    }
 
 }

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import entities.Circle;
 import entities.Rectangle;
+import entities.Shape;
 import entities.enums.Color;
 
 public class App {
@@ -13,10 +14,9 @@ public class App {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of shapes:");
         int n = sc.nextInt();
-        sc.nextLine(); 
+        sc.nextLine();
 
-        List<Rectangle> rectangles = new ArrayList<>();
-        List<Circle> circles = new ArrayList<>();
+        List<Shape> list = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
             System.out.println("Rectangle or circle?");
@@ -30,25 +30,21 @@ public class App {
                 System.out.println("Enter height:");
                 double height = sc.nextDouble();
                 sc.nextLine();
-                rectangles.add(new Rectangle(color, width, height));
+                list.add(new Rectangle(color, width, height));
             } else if (enteredChar == 'c') {
                 System.out.println("Enter color (BLACK, BLUE, RED):");
                 Color color = Color.valueOf(sc.nextLine().toUpperCase());
                 System.out.println("Enter radius:");
                 double radius = sc.nextDouble();
                 sc.nextLine();
-                circles.add(new Circle(color, radius));
+                list.add(new Circle(color, radius));
             } else {
                 System.out.println("Invalid input. Please enter 'r' for rectangle or 'c' for circle.");
                 i--;
             }
         }
 
-        for (Circle area : circles) {
-            area.area();
-        }
-
-        for (Rectangle area : rectangles) {
+        for (Shape area : list) {
             area.area();
         }
 
